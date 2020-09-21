@@ -36,12 +36,12 @@
     <script>
         $( document ).ready(function() {
             console.log( "ready!" );
-        });
+        
 
 
         $.ajax({
                 type: 'GET',
-                url: 'https://api.nasa.gov/planetary/apod/gF2dvjLcEkpU0oQgKncewqiU37IJBH4CEf0zpmQ3',
+                url: 'https://api.nasa.gov/planetary/apod?api_key=lanB7165TxYteQCbOXNFauIGHijkqnffyLe4CUmD',
                 dataType: 'json',
                 success: function(data){
                     $('#nasaApod').css('background',"url('" + data.url + "')");
@@ -51,6 +51,7 @@
                     
                 }
             });
+        });
     </script>
   </body>
 </html>

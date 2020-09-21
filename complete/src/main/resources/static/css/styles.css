@@ -1,3 +1,26 @@
-body{
-    color:blue;
+/* Greeting */
+#nasaApod{
+    background-repeat: none;
+    background-position: center;
+    height: 200px;
+}
+
+/* About */
+.NonProfitInfo{
+    margin: 20px;
+}
+#list-title{
+    margin: 20px;
+}
+
+/* Contact */
+.jumbotron #ajaxResponse{
+    color: crimson;
+    padding-bottom: 5px;
+}
+
+/* Blog */
+body > #ajaxResponse{
+    margin: 20px;
+    color: crimson;
 }
