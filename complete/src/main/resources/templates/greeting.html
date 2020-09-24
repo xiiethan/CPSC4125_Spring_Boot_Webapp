@@ -24,6 +24,9 @@
     <div class='nasaApod'>
 
     </div>
+    <div class='nasaInfo'>
+
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -36,21 +39,21 @@
     <script>
         $( document ).ready(function() {
             console.log( "ready!" );
-        
-
-
-        $.ajax({
-                type: 'GET',
-                url: 'https://api.nasa.gov/planetary/apod?api_key=lanB7165TxYteQCbOXNFauIGHijkqnffyLe4CUmD',
-                dataType: 'json',
-                success: function(data){
-                    $('#nasaApod').css('background',"url('" + data.url + "')");
-                },
-                error: function(e){
-                    console.log(e);
-                    
-                }
-            });
+            $.ajax({
+                    type: 'GET',
+                    url: 'https://api.nasa.gov/planetary/apod?api_key=lanB7165TxYteQCbOXNFauIGHijkqnffyLe4CUmD',
+                    dataType: 'json',
+                    success: function(data){
+                        console.log(data);
+                        $('#nasaApod').css('background',"url('" + data.url + "')");
+                        $('#nasaInfo').html(data.title);
+                        $('#nasaInfo').html(data.description);
+                        $('#nasaInfo').html(data.date);
+                    },
+                    error: function(e){
+                        console.log(e);
+                    }
+                });
         });
     </script>
   </body>
