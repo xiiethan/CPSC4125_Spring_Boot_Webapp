@@ -20,11 +20,7 @@
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
-
-    <div class='nasaApod'>
-
-    </div>
-    <div class='nasaInfo'>
+    <div id='nasaInfo'>
 
     </div>
 
@@ -45,10 +41,12 @@
                     dataType: 'json',
                     success: function(data){
                         console.log(data);
-                        $('#nasaApod').css('background',"url('" + data.url + "')");
-                        $('#nasaInfo').html(data.title);
-                        $('#nasaInfo').html(data.description);
-                        $('#nasaInfo').html(data.date);
+                        var img = '<img src="' + data.url + '" alt="NASA image of the day">';
+                        var title = '<h3>' + data.title + '</h3>';
+                        var date = '<span>' + data.date + '</span>';
+                        //var <span>date<.span>, <span>desc</span>
+                        $('#nasaInfo').html(title + date + img);
+                        //$('#nasaInfo').html(data.date);
                     },
                     error: function(e){
                         console.log(e);
